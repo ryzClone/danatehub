@@ -1,0 +1,72 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff; /* Yengil ko'k fon */
+  }
+  
+  .login-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Kengaytirilgan o'lchov */
+  }
+  
+  h2 {
+    text-align: center;
+    color: #007bff; /* Ko'k rang */
+    margin-bottom: 20px; /* Yuqoridan joy */
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px; /* Kattaroq joy */
+    border: 1px solid #007bff; /* Ko'k rang */
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border-color: #0056b3; /* Qattiq ko'k rang */
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px; /* Kattaroq joy */
+    background-color: #007bff; /* Ko'k rang */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3; /* Qattiq ko'k rang */
+  }
+  
+  .forgot-register {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .forgot-register a {
+    color: #007bff; /* Ko'k rang */
+    text-decoration: none;
+  }
+  
+  .forgot-register a:hover {
+    text-decoration: underline;
+  }
+  
