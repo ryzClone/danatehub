@@ -1,7 +1,5 @@
 .users-container {
-    width: 90%;
-    margin: 20px auto;
-    padding: 30px;
+    width: 100%;
     background: #0C175A; /* To'q ko'k fon */
     border: 1px solid #A8C6E8; /* Yangi border rangi */
     border-radius: 12px;
