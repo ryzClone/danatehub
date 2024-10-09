@@ -2,32 +2,32 @@ import React, { useState } from 'react';
 import './users.css';
 
 const initialUsers = [
-  { name: 'John Doe', position: 'Developer', office: 'New York', age: 30, startDate: '2019-01-01', salary: '$5000' },
-  { name: 'Jane Smith', position: 'Designer', office: 'London', age: 28, startDate: '2020-06-15', salary: '$4500' },
-  { name: 'Michael Brown', position: 'Manager', office: 'Paris', age: 45, startDate: '2018-03-22', salary: '$6000' },
-  { name: 'John Doe', position: 'Developer', office: 'New York', age: 30, startDate: '2019-01-01', salary: '$5000' },
-  { name: 'Jane Smith', position: 'Designer', office: 'London', age: 28, startDate: '2020-06-15', salary: '$4500' },
-  { name: 'Michael Brown', position: 'Manager', office: 'Paris', age: 45, startDate: '2018-03-22', salary: '$6000' },
-  // Ko'proq foydalanuvchi ma'lumotlarini qo'shing
+  { id: 0, username: 'johndoe', online: true, balance: 5000, profileImgUrl: 'https://via.placeholder.com/50', lastOnlineAt: '2024-10-09T10:10:39.926Z' },
+  { id: 1, username: 'janesmith', online: true, balance: 4500, profileImgUrl: 'https://via.placeholder.com/50', lastOnlineAt: '2024-10-09T10:10:39.926Z' },
+  { id: 2, username: 'michaelbrown', online: true, balance: 6000, profileImgUrl: 'https://via.placeholder.com/50', lastOnlineAt: '2024-10-09T10:10:39.926Z' },
+  // Qo'shimcha foydalanuvchi ma'lumotlarini qo'shing
 ];
 
 function Users() {
   const [users] = useState(initialUsers);
   const [searchTerm, setSearchTerm] = useState('');
-  const [entries, setEntries] = useState(1);
+  const [entries, setEntries] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isEnabled, setIsEnabled] = useState(true);
   const entriesPerPage = entries;
-  
-  // Filtrlash
+
+  const toggleStatus = () => {
+    setIsEnabled(!isEnabled);
+  };
+
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
   const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(searchTerm.toLowerCase())
+    user.username.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Sahifalash uchun
   const totalPages = Math.ceil(filteredUsers.length / entriesPerPage);
   const currentUsers = filteredUsers.slice(
     (currentPage - 1) * entriesPerPage,
@@ -48,16 +48,10 @@ function Users() {
     <div className="users-container">
       <div className="table-controls">
         <div className="show-entries">
-          <label>Show </label>
-          <select
-            value={entries}
-            onChange={(e) => setEntries(Number(e.target.value))}
-          >
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-          </select>
-          <span> entries</span>
+          <p>Status: </p>
+          <button onClick={toggleStatus} className="status-btn">
+            {isEnabled ? 'Enabled' : 'Disabled'}
+          </button>
         </div>
 
         <div className="search-box">
@@ -66,7 +60,7 @@ function Users() {
             type="text"
             value={searchTerm}
             onChange={handleSearch}
-            placeholder="Search by name"
+            placeholder="Search by username"
           />
         </div>
       </div>
@@ -74,23 +68,23 @@ function Users() {
       <table className="user-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start Date</th>
-            <th>Salary</th>
+            <th>Username</th>
+            <th>Online</th>
+            <th>Balance</th>
+            <th>Profile Image</th>
+            <th>Last Online At</th>
           </tr>
         </thead>
         <tbody>
-          {currentUsers.map((user, index) => (
-            <tr key={index}>
-              <td>{user.name}</td>
-              <td>{user.position}</td>
-              <td>{user.office}</td>
-              <td>{user.age}</td>
-              <td>{user.startDate}</td>
-              <td>{user.salary}</td>
+          {currentUsers.map((user) => (
+            <tr key={user.id}>
+              <td>{user.username}</td>
+              <td>{user.online ? 'Yes' : 'No'}</td>
+              <td>{user.balance}</td>
+              <td>
+                <img src={user.profileImgUrl} alt={user.username} />
+              </td>
+              <td>{new Date(user.lastOnlineAt).toLocaleString()}</td>
             </tr>
           ))}
         </tbody>
@@ -124,5 +118,4 @@ function Users() {
     </div>
   );
 }
-
 export default Users;
