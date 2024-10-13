@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { FaTachometerAlt, FaUsers, FaMoneyBillWave, FaUser, FaSignOutAlt } from 'react-icons/fa'; // FaSignOutAlt ikonkasi qo'shilgan
+import { FaTachometerAlt, FaUsers, FaMoneyBillWave, FaPowerOff, FaBell } from 'react-icons/fa'; // FaBell qo'shildi
 import './home.css';
 
 function Home() {
@@ -8,16 +8,15 @@ function Home() {
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     const toggleSidebar = () => {
-        setIsCollapsed(!isCollapsed);
+        setIsCollapsed(prev => !prev);
     };
 
     const handleLogout = () => {
-        // Logout qilish funksiyasini bu yerda yozing
         console.log('Logout clicked');
     };
 
     return (
-        <div className={`container ${isCollapsed ? 'collapsed' : ''}`}>
+        <div className="container">
             <nav className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
                 <div className={`logo ${isCollapsed ? 'collapsed' : ''}`}>
                     <div className="logo-container">
@@ -28,20 +27,26 @@ function Home() {
                 <ul>
                     <li className={location.pathname === '/' ? 'active' : ''}>
                         <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-                            <FaTachometerAlt className="icon" />
+                            <FaTachometerAlt className="home-icon" />
                             {!isCollapsed && <span className="text">Dashboard</span>}
                         </Link>
                     </li>
                     <li className={location.pathname === '/users' ? 'active' : ''}>
                         <Link to="/users" className={location.pathname === '/users' ? 'active' : ''}>
-                            <FaUsers className="icon" />
+                            <FaUsers className="home-icon" />
                             {!isCollapsed && <span className="text">Users</span>}
                         </Link>
                     </li>
                     <li className={location.pathname === '/withdraws' ? 'active' : ''}>
                         <Link to="/withdraws" className={location.pathname === '/withdraws' ? 'active' : ''}>
-                            <FaMoneyBillWave className="icon" />
+                            <FaMoneyBillWave className="home-icon" />
                             {!isCollapsed && <span className="text">Withdraws</span>}
+                        </Link>
+                    </li>
+                    <li className={location.pathname === '/notifications' ? 'active' : ''}> {/* Notification bo'limi qo'shildi */}
+                        <Link to="/notifications" className={location.pathname === '/notifications' ? 'active' : ''}>
+                            <FaBell className="home-icon" /> {/* FaBell ikon qo'shildi */}
+                            {!isCollapsed && <span className="text">Notifications</span>}
                         </Link>
                     </li>
                 </ul>
@@ -56,10 +61,8 @@ function Home() {
                         </div>
                     </div>
                     <div className="user-profile">
-                        <span className="username">Username</span>
-                        <FaUser className="user-icon" />
                         <button className="logout-btn" onClick={handleLogout}>
-                            <FaSignOutAlt className="icon" />
+                            <FaPowerOff className="home-icon" />
                         </button>
                     </div>
                 </header>

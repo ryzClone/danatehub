@@ -1,7 +1,10 @@
 .dashboard {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 20px;
   background-color: #eef1f4;
-  min-height: 100vh;
+  min-height: 100vh; /* To'liq ekran balandligi */
 }
 
 .dashboard-title {
@@ -13,7 +16,8 @@
 .blocks-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap; /* Moslashuvchan bo'lishi uchun */
 }
 
 .block {
@@ -21,59 +25,17 @@
   border: 1px solid #d1d4d8;
   border-radius: 8px;
   padding: 20px;
-  width: 23%;
+  flex: 1 1 calc(25% - 20px); /* Bo'laklarning kengligi sidebar o'lchamiga moslashadi */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.block-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.icon {
-  font-size: 40px;
-  background: rgba(0, 123, 255, 0.1);
-  padding: 8px;
-  color: #007bff;
-  border-radius: 10px;
-}
-
-.block-title {
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 0;
-  text-align: left;
-  color: #444;
-}
-
-.user-count {
-  font-size: 32px;
-  font-weight: 500;
-  color: #444;
-}
-
-.icon.total-users {
-  color: blue;
-}
-
-.icon.sessions {
-  color: violet;
-}
-
-.icon.bounce-rate {
-  color: green;
-}
-
-.icon.avg-session-duration {
-  color: orange;
+  min-width: 200px; /* Juda kichik ekranda to'g'ri ko'rinishi uchun */
+  max-width: 100%;
 }
 
 .chart-container {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .chart-overview {
@@ -81,8 +43,9 @@
   border: 1px solid #d1d4d8;
   border-radius: 8px;
   padding: 20px;
-  width: 65%;
+  flex: 1 1 65%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* Juda kichik ekranda to'g'ri ko'rinishi uchun */
 }
 
 .session-device {
@@ -90,37 +53,35 @@
   border: 1px solid #d1d4d8;
   border-radius: 8px;
   padding: 15px;
-  width: 35%;
+  flex: 1 1 30%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
 }
 
 .device-info {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  gap: 20px; /* Elementlar orasidagi masofa */
 }
 
 .device-card {
   flex: 1;
   border-radius: 8px;
   padding: 15px;
-  margin: 0 10px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
-/* Mobile rang */
 .device-card.mobile {
   background-color: #28a745; /* pie chart Mobile rangi */
 }
 
-/* Desktop rang */
 .device-card.desktop {
   background-color: #007bff; /* pie chart Desktop rangi */
 }
 
-/* Tablet rang */
 .device-card.tablet {
   background-color: #ffc107; /* pie chart Tablet rangi */
 }
@@ -139,4 +100,22 @@
   height: 300px;
   background-color: #e9ecef;
   border-radius: 4px;
+  width: 100%; /* Grafikaning kengligi moslashadi */
+}
+
+/* Moslashuvchan dizayn uchun qo'shimcha */
+@media (max-width: 1024px) {
+  .blocks-container {
+    flex-direction: column;
+  }
+
+  .chart-container {
+    flex-direction: column;
+  }
+
+  .block,
+  .chart-overview,
+  .session-device {
+    flex: 1 1 100%; /* Kichik ekranda bo'laklar to'liq kenglikni egallaydi */
+  }
 }

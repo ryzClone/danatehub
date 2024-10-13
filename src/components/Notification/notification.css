@@ -1,0 +1,126 @@
+/* Container for Notification */
+.notification-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Content should stick to the top */
+    align-items: center;
+    height: calc(100vh - 60px); /* Full height of the available viewport */
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background color */
+    box-sizing: border-box;
+}
+
+/* Notification form styling */
+.notification-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px; /* Maximum width of the form */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #34495e; /* Label color */
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none; /* Remove default outline */
+    border-color: #3498db; /* Border color on focus */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Shadow effect on focus */
+}
+
+/* Button styling */
+.button {
+    background-color: #2C3E50; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Button font size */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+.button:hover {
+    background-color: #34495E; /* Darker shade on hover */
+}
+
+/* Notification list styling */
+.notification-list {
+    list-style-type: none; /* No bullets */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 600px; /* Maximum width of the notification list */
+    flex-grow: 1; /* Allow the list to grow and take remaining space */
+    overflow-y: auto; /* Add scroll if the list is too long */
+}
+
+.notification-item {
+    background-color: #ecf0f1; /* Background color for notifications */
+    padding: 15px; /* Padding inside each notification */
+    border-left: 4px solid #34495e; /* Left border color */
+    margin-bottom: 10px; /* Space between notifications */
+    border-radius: 4px; /* Rounded corners */
+    position: relative; /* Positioning for badge */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.notification-item h4 {
+    margin: 0; /* No margin for title */
+    font-size: 18px; /* Title font size */
+    color: #2c3e50; /* Title color */
+}
+
+.notification-item p {
+    margin: 5px 0 0; /* Margin for description */
+    font-size: 14px; /* Description font size */
+    color: #7f8c8d; /* Description color */
+}
+
+/* Category badge for notifications */
+.category-badge {
+    background-color: #34495e; /* Badge background color */
+    color: white; /* Badge text color */
+    padding: 2px 8px; /* Padding for badge */
+    border-radius: 3px; /* Rounded corners */
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Position from top */
+    right: 10px; /* Position from right */
+    font-size: 12px; /* Badge font size */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+/* Additional styles for small screens */
+@media (max-width: 768px) {
+    .notification-container {
+        padding: 15px; /* Reduced padding for small screens */
+    }
+
+    .button {
+        width: 100%; /* Button takes full width */
+    }
+}

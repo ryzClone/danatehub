@@ -13,6 +13,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import BlockComponent from '../Viewblock/BlockComponent';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, ArcElement, Tooltip, Legend);
 
@@ -116,49 +117,11 @@ function Dashboard() {
       <h1 className="dashboard-title">Dashboard</h1>
 
       <div className="blocks-container">
-        {/* Total Users Block */}
-        <div className="block total-users">
-          <div className="block-header">
-            <FaUsers className="icon total-users" />
-          </div>
-          <h2 className="block-title">Total Users</h2>
-          <div className="user-count-container">
-            <p className="user-count">{userCount}</p>
-          </div>
-        </div>
-
-        {/* Sessiyalar bloki */}
-        <div className="block sessions">
-          <div className="block-header">
-            <FaChartLine className="icon sessions" />
-          </div>
-          <h2 className="block-title">Sessions</h2>
-          <div className="user-count-container">
-            <p className="user-count">1,500</p>
-          </div>
-        </div>
-
-        {/* Bounce Rate Block */}
-        <div className="block bounce-rate">
-          <div className="block-header">
-            <FaPercent className="icon bounce-rate" />
-          </div>
-          <h2 className="block-title">Bounce Rate</h2>
-          <div className="user-count-container">
-            <p className="user-count">40%</p>
-          </div>
-        </div>
-
-        {/* Avg Session Duration Block */}
-        <div className="block avg-session-duration">
-          <div className="block-header">
-            <FaClock className="icon avg-session-duration" />
-          </div>
-          <h2 className="block-title">Avg Session Duration</h2>
-          <div className="user-count-container">
-            <p className="user-count">5m 12s</p>
-          </div>
-        </div>
+        {/* Block Components */}
+        <BlockComponent title="Total Users" count={userCount} iconType="users" />
+        <BlockComponent title="Sessions" count="1,500" iconType="sessions" />
+        <BlockComponent title="Bounce Rate" count="40%" iconType="bounceRate" />
+        <BlockComponent title="Avg Session Duration" count="5m 12s" iconType="avgSessionDuration" />
       </div>
 
       <div className="chart-container">
@@ -173,7 +136,7 @@ function Dashboard() {
           <h2>Session Device</h2>
           <Pie data={pieData} options={pieOptions} />
           <div className="device-info">
-          <div className="device-card desktop">
+            <div className="device-card desktop">
               <strong>Desktop:</strong>
               <p>50%</p>
             </div>

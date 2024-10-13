@@ -9,6 +9,7 @@ import Login from './components/login/loginpage.jsx';
 import ProtectedRoute from './components/ProtectedRoute/protecteroute.jsx';
 
 import './App.css';
+import Notification from './components/Notification/notification.jsx';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route index element={<Dashbord />} />
         <Route path="users" element={<Users />} />
         <Route path="withdraws" element={<Withdraws />} />
+        <Route path="notifications" element={<Notification />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
