@@ -1,23 +1,45 @@
-/* Container for Notification */
 .notification-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Content should stick to the top */
+    justify-content: flex-start;
     align-items: center;
-    height: calc(100vh - 60px); /* Full height of the available viewport */
+    height: auto;
     padding: 20px;
-    background-color: #f8f9fa; /* Light background color */
+    background-color: #eef1f4; /* Umumiy fon rang */
     box-sizing: border-box;
+    font-family: 'Afacad Flux', sans-serif; /* Font o'rnatildi */
 }
 
-/* Notification form styling */
+.notification-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #444;
+    text-align: left;
+    width: 100%;
+}
+
+.notification-block-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.create-notification-block {
+    background-color: white; /* Background color for the notification block */
+    padding: 20px; /* Internal padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow effect */
+    margin-bottom: 30px; /* Space below the block */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Max width to keep it consistent */
+}
+
 .notification-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 600px; /* Maximum width of the form */
-    margin-bottom: 30px;
 }
 
 .form-group {
@@ -30,97 +52,95 @@
 .form-group label {
     font-size: 16px;
     font-weight: 500;
-    color: #34495e; /* Label color */
+    color: #34495e;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     padding: 10px;
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 14px;
     width: 100%;
     box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Chegaraning o'zgarishi */
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    outline: none; /* Remove default outline */
-    border-color: #3498db; /* Border color on focus */
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Shadow effect on focus */
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-/* Button styling */
 .button {
-    background-color: #2C3E50; /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Button font size */
-    transition: background-color 0.3s ease; /* Transition for background color */
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s; /* O'zgarish effekti */
 }
 
 .button:hover {
-    background-color: #34495E; /* Darker shade on hover */
+    background-color: #34495E;
+    transform: translateY(-2px); /* Tugmani ko'tarish efekti */
 }
 
-/* Notification list styling */
 .notification-list {
-    list-style-type: none; /* No bullets */
+    list-style-type: none;
     padding: 0;
     margin: 0;
     width: 100%;
-    max-width: 600px; /* Maximum width of the notification list */
-    flex-grow: 1; /* Allow the list to grow and take remaining space */
-    overflow-y: auto; /* Add scroll if the list is too long */
+    max-width: 600px;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .notification-item {
-    background-color: #ecf0f1; /* Background color for notifications */
-    padding: 15px; /* Padding inside each notification */
-    border-left: 4px solid #34495e; /* Left border color */
-    margin-bottom: 10px; /* Space between notifications */
-    border-radius: 4px; /* Rounded corners */
-    position: relative; /* Positioning for badge */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background-color: #fff;
+    padding: 15px;
+    border-left: 4px solid #34495e;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .notification-item h4 {
-    margin: 0; /* No margin for title */
-    font-size: 18px; /* Title font size */
-    color: #2c3e50; /* Title color */
+    margin: 0;
+    font-size: 18px;
+    color: #2c3e50;
 }
 
 .notification-item p {
-    margin: 5px 0 0; /* Margin for description */
-    font-size: 14px; /* Description font size */
-    color: #7f8c8d; /* Description color */
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #7f8c8d;
 }
 
-/* Category badge for notifications */
 .category-badge {
-    background-color: #34495e; /* Badge background color */
-    color: white; /* Badge text color */
-    padding: 2px 8px; /* Padding for badge */
-    border-radius: 3px; /* Rounded corners */
-    position: absolute; /* Absolute positioning */
-    top: 10px; /* Position from top */
-    right: 10px; /* Position from right */
-    font-size: 12px; /* Badge font size */
-    text-transform: uppercase; /* Uppercase text */
+    background-color: #34495e;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
 }
 
-/* Additional styles for small screens */
 @media (max-width: 768px) {
     .notification-container {
-        padding: 15px; /* Reduced padding for small screens */
+        padding: 15px;
     }
 
     .button {
-        width: 100%; /* Button takes full width */
+        width: 100%;
     }
 }
