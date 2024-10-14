@@ -3,15 +3,40 @@ import './users.css';
 import BlockComponent from '../Viewblock/BlockComponent';
 
 const initialUsers = [
-  { id: 0, username: 'johndoe', online: true, balance: 5000, profileImgUrl: 'https://via.placeholder.com/50', lastOnlineAt: '2024-10-09T10:10:39.926Z' },
-  { id: 1, username: 'janesmith', online: true, balance: 4500, profileImgUrl: 'https://via.placeholder.com/50', lastOnlineAt: '2024-10-09T10:10:39.926Z' },
-  { id: 2, username: 'michaelbrown', online: true, balance: 6000, profileImgUrl: 'https://via.placeholder.com/50', lastOnlineAt: '2024-10-09T10:10:39.926Z' },
+  {
+    id: 0,
+    username: 'johndoe',
+    email: 'ozodbekjumayev50@gmail.com', // Email maydoni
+    online: true,
+    balance: 5000,
+    profileImgUrl: 'https://via.placeholder.com/50',
+    lastOnlineAt: '2024-10-09T10:10:39.926Z',
+  },
+  {
+    id: 1,
+    username: 'janesmith',
+    email: 'janesmith@example.com', // Email maydoni
+    online: true,
+    balance: 4500,
+    profileImgUrl: 'https://via.placeholder.com/50',
+    lastOnlineAt: '2024-10-09T10:10:39.926Z',
+  },
+  {
+    id: 2,
+    username: 'michaelbrown',
+    email: 'michaelbrown@example.com', // Email maydoni
+    online: true,
+    balance: 6000,
+    profileImgUrl: 'https://via.placeholder.com/50',
+    lastOnlineAt: '2024-10-09T10:10:39.926Z',
+  },
 ];
+
 
 function Users() {
   const [users, setUsers] = useState(initialUsers);
   const [searchTerm, setSearchTerm] = useState('');
-  const [entries, setEntries] = useState(10);
+  const [entries] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const [isEnabled, setIsEnabled] = useState(true);
   const entriesPerPage = entries;
@@ -41,30 +66,40 @@ function Users() {
   };
 
   const handleStatusChange = (userId) => {
-    setUsers(users.map(user => 
-      user.id === userId ? { ...user, online: !user.online } : user
-    ));
+    setUsers(
+      users.map((user) =>
+        user.id === userId ? { ...user, online: !user.online } : user
+      )
+    );
   };
 
   const pagesToShow = 3;
   const paginationStart = Math.max(currentPage - Math.floor(pagesToShow / 2), 1);
-  const paginationEnd = Math.min(paginationStart + pagesToShow - 1, totalPages);
+  const paginationEnd = Math.min(
+    paginationStart + pagesToShow - 1,
+    totalPages
+  );
 
   return (
     <div className="users-wrapper">
+       <h1 className="notification-title">Users</h1>
       <div className="blocks-container">
         <BlockComponent title="Total Users" count={200} iconType="users" />
         <BlockComponent title="Sessions" count="1,500" iconType="sessions" />
         <BlockComponent title="Bounce Rate" count="40%" iconType="bounceRate" />
-        <BlockComponent title="Avg Session Duration" count="5m 12s" iconType="avgSessionDuration" />
+        <BlockComponent
+          title="Avg Session Duration"
+          count="5m 12s"
+          iconType="avgSessionDuration"
+        />
       </div>
 
       <div className="users-container">
         <div className="table-controls">
           <div className="show-entries">
             <p>Status: </p>
-            <button 
-              onClick={toggleStatus} 
+            <button
+              onClick={toggleStatus}
               className={`status-btn ${isEnabled ? 'enabled' : 'disabled'}`}
             >
               {isEnabled ? 'Enabled' : 'Disabled'}
@@ -85,35 +120,46 @@ function Users() {
         <table className="user-table">
           <thead>
             <tr>
+              <th>Image</th>
               <th>Username</th>
+              <th>Email</th> {/* Email ustuni qo'shildi */}
               <th>Online</th>
               <th>Balance</th>
-              <th>Profile Image</th>
               <th>Last Online At</th>
               <th>Change Status</th>
+              <th>Info</th>
+              <th>Confirmation</th>
             </tr>
           </thead>
           <tbody>
             {currentUsers.map((user) => (
               <tr key={user.id}>
-                <td>{user.username}</td>
-                <td>{user.online ? 'Yes' : 'No'}</td>
-                <td>{user.balance}</td>
                 <td>
                   <img src={user.profileImgUrl} alt={user.username} />
                 </td>
+                <td>{user.username}</td>
+                <td>{user.email}</td> {/* Email ko'rsatish */}
+                <td>{user.online ? 'Yes' : 'No'}</td>
+                <td>{user.balance}</td>
                 <td>{new Date(user.lastOnlineAt).toLocaleString()}</td>
                 <td>
-                  <button 
-                    className={`status-toggle-btn ${user.online ? 'online' : 'offline'}`} 
+                  <button
+                    className={`status-toggle-btn ${user.online ? 'online' : 'offline'}`}
                     onClick={() => handleStatusChange(user.id)}
                   >
                     <span className="toggle-inner"></span>
                   </button>
                 </td>
+                <td>
+                  <button className="info-btn">Info</button>
+                </td>
+                <td>
+                  <button className="confirm-btn">Confirm</button>
+                </td>
               </tr>
             ))}
           </tbody>
+
         </table>
 
         <div className="pagination">
@@ -124,15 +170,19 @@ function Users() {
           >
             Prev
           </button>
-          {Array.from({ length: paginationEnd - paginationStart + 1 }, (_, index) => (
-            <button
-              key={index}
-              className={`page-btn ${paginationStart + index === currentPage ? 'active' : ''}`}
-              onClick={() => handlePageChange(paginationStart + index)}
-            >
-              {paginationStart + index}
-            </button>
-          ))}
+          {Array.from(
+            { length: paginationEnd - paginationStart + 1 },
+            (_, index) => (
+              <button
+                key={index}
+                className={`page-btn ${paginationStart + index === currentPage ? 'active' : ''
+                  }`}
+                onClick={() => handlePageChange(paginationStart + index)}
+              >
+                {paginationStart + index}
+              </button>
+            )
+          )}
           <button
             className="page-btn"
             onClick={() => handlePageChange(currentPage + 1)}
@@ -147,3 +197,6 @@ function Users() {
 }
 
 export default Users;
+
+
+

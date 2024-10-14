@@ -5,9 +5,9 @@
     align-items: center;
     height: auto;
     padding: 20px;
-    background-color: #eef1f4; /* Umumiy fon rang */
+    background-color: #eef1f4;
     box-sizing: border-box;
-    font-family: 'Afacad Flux', sans-serif; /* Font o'rnatildi */
+    font-family: 'Afacad Flux', sans-serif;
 }
 
 .notification-title {
@@ -18,6 +18,14 @@
     width: 100%;
 }
 
+.notification-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Form va notificationlar o'rtasidagi masofa */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
 .notification-block-container {
     display: flex;
     gap: 30px;
@@ -25,16 +33,35 @@
     margin-bottom: 30px;
 }
 
-.create-notification-block {
-    background-color: white; /* Background color for the notification block */
-    padding: 20px; /* Internal padding */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow effect */
-    margin-bottom: 30px; /* Space below the block */
-    width: 100%; /* Full width */
-    max-width: 600px; /* Max width to keep it consistent */
+.notification-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
+.create-notification-block {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    flex: 1; /* Yangi notification uchun bo'lim */
+}
+
+.notification-list-section {
+    flex: 1; /* Notification ro'yxati uchun bo'lim */
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+.notification-list-section h3{
+    padding-bottom: 8px;
+}
 .notification-form {
     display: flex;
     flex-direction: column;
@@ -64,7 +91,7 @@
     font-size: 14px;
     width: 100%;
     box-sizing: border-box;
-    transition: border-color 0.3s ease; /* Chegaraning o'zgarishi */
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
@@ -83,24 +110,22 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s; /* O'zgarish effekti */
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .button:hover {
     background-color: #34495E;
-    transform: translateY(-2px); /* Tugmani ko'tarish efekti */
+    transform: translateY(-2px);
 }
 
 .notification-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    width: 100%;
-    max-width: 600px;
-    flex-grow: 1;
-    overflow-y: auto;
 }
-
+.notification-list li{
+    background-color: #f4f0f0;
+}
 .notification-item {
     background-color: #fff;
     padding: 15px;
@@ -109,6 +134,12 @@
     border-radius: 4px;
     position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Kursorni qo'shish */
+    transition: transform 0.2s ease;
+}
+
+.notification-item:hover {
+    transform: translateY(-3px); /* Hover effekti */
 }
 
 .notification-item h4 {
@@ -138,6 +169,15 @@
 @media (max-width: 768px) {
     .notification-container {
         padding: 15px;
+    }
+
+    .notification-block {
+        flex-direction: column;
+        gap: 15px; /* Kichik ekranda form va ro'yxat orasidagi masofa */
+    }
+
+    .notification-section {
+        flex-direction: column;
     }
 
     .button {

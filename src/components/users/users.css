@@ -1,24 +1,30 @@
+/* Umumiy jadvalni o'rash */
 .users-wrapper {
     padding: 20px;
-    background-color: #f8f9fa; /* Yengil fon */
-    border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Chiroyli soyalar */
+    background-color: #eef1f4;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow-x: auto; /* Jadval juda keng bo'lsa, scroll qo'shadi */
 }
 
+/* Jadval uchun konteyner */
 .users-container {
     margin-top: 20px;
     background: #ffffff;
-    border: 1px solid #2C3E50; /* Yengil quyuq rang border */
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* O'sib ketishining oldini oladi */
 }
 
+/* Jadval uchun boshqaruv tugmalari */
 .table-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    border-bottom: 2px solid #2C3E50; /* Kuchli ajratuvchi chiziq */
+    padding: 10px 0;
 }
 
 .show-entries {
@@ -26,13 +32,14 @@
     align-items: center;
 }
 
+/* Jadvaldagi asosiy tugmalar */
 .status-btn {
-    margin-left: 10px;
+    margin-left: 5px;
     padding: 8px 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    background-color: #2C3E50;
     color: #ffffff;
-    background-color: #2C3E50; /* Yengil quyuq rang */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -44,40 +51,85 @@
 
 .search-input {
     margin-left: 10px;
-    padding: 8px;
-    border: 1px solid #2C3E50; /* Quyuq rang border */
-    border-radius: 6px;
-    width: 250px; /* Qulay kenglik */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 240px;
     outline: none;
+    transition: border-color 0.3s ease;
 }
 
+/* Jadval dizayni */
 .user-table {
     width: 100%;
-    border-collapse: separate; /* Chegaralar alohida bo'lib, bo'shliqlar bilan ajratiladi */
-    border-spacing: 0; /* Bo'shliqlarni olib tashlash */
+    border-collapse: collapse;
+    table-layout: auto;
+    margin-top: 15px;
+    border: 1px solid #ddd;
 }
 
 .user-table th,
 .user-table td {
-    padding: 15px;
+    padding: 12px 15px;
     text-align: left;
     font-size: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
 }
 
+/* Profil rasmning o'lchami */
+.user-table td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Dumaloq profil rasm */
+    object-fit: cover;
+}
+
+/* Jadvaldagi ustunlar sarlavhasi */
 .user-table th {
-    background-color: #2C3E50; /* Quyuq rang fon */
-    color: #ffffff; /* Oq rang */
+    background-color: #2C3E50;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
+/* Jadvalning qatorlari */
 .user-table tbody tr {
-    background-color: #ffffff; /* Oq rang fon */
-    border: 1px solid #2C3E50; /* Faqat butun tr atrofida chegara */
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f1f1f1; /* Hoverda qator foni */
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8; /* Har ikkinchi qatorda engil rang */
 }
 
 .user-table tbody tr td {
-    border: none; /* Ichki td elementlariga chegara qo'ymaslik */
+    border-bottom: 1px solid #ddd;
 }
 
+/* Tugmalar dizayni */
+.info-btn,
+.confirm-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2C3E50;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-btn:hover,
+.confirm-btn:hover {
+    background-color: #1a252f;
+}
+
+/* Pagination dizayni */
 .pagination {
     display: flex;
     justify-content: center;
@@ -85,33 +137,34 @@
 }
 
 .page-btn {
-    margin: 0 5px;
+    margin: 0 8px;
     padding: 10px 15px;
-    border: 1px solid #2C3E50; /* Quyuq rang border */
-    background-color: #ffffff; /* Oq fon */
-    color: #2C3E50; /* Quyuq rang */
+    border: 1px solid #2C3E50;
+    background-color: #ffffff;
+    color: #2C3E50;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .page-btn:hover {
-    background-color: #2C3E50; /* Hoverda quyuq rang fon */
-    color: #ffffff; /* Oq rang */
+    background-color: #2C3E50;
+    color: #ffffff;
 }
 
 .page-btn.active {
-    background-color: #2C3E50; /* Faol sahifada quyuq rang fon */
-    color: #ffffff; /* Oq rang */
+    background-color: #2C3E50;
+    color: #ffffff;
 }
-/* toogle status */
+
+/* Toggle tugma */
 .status-toggle-btn {
     position: relative;
     width: 50px;
     height: 25px;
     border: none;
-    border-radius: 15px;
-    background-color: #2C3E50;
+    border-radius: 25px;
+    background-color: #2C3E50; /* Asosiy sayt ranglariga mos quyuq kulrang */
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;
@@ -121,22 +174,52 @@
     position: absolute;
     width: 50%;
     height: 100%;
-    border-radius: 15px;
-    background-color: #ddd; /* Tugma ichki element rangi */
+    border-radius: 25px;
+    background-color: #bfc5c9; /* Tugmaning oddiy holati */
     top: 0;
     left: 0;
     transition: left 0.3s ease;
 }
 
-/* Tugma statusiga qarab fon rangini belgilash */
 .status-toggle-btn.online {
-    background-color: green; /* Yashil fon */
+    background-color: #3b5998; /* Quyuq ko'k - online holat */
 }
 
 .status-toggle-btn.online .toggle-inner {
-    left: 50%; /* Yoqilganida ichki elementni o'ngga harakatlantirish */
+    background-color: #ffffff; /* Yoqilganida oq tugma */
+    left: 50%;
+}
+
+.status-toggle-btn.offline {
+    background-color: #6c757d; /* Quyuq kulrang - offline holat */
 }
 
 .status-toggle-btn.offline .toggle-inner {
-    left: 0; /* O'chirilganda ichki elementni chapga harakatlantirish */
+    background-color: #ffffff; /* O'chirilganda oq tugma */
+    left: 0;
+}
+
+
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.info-btn,
+.confirm-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2C3E50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-btn:hover,
+.confirm-btn:hover {
+    background-color: #1a252f;
 }
