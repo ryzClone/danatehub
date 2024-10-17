@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Dashbord from './components/dashboard/dashbord.jsx';
 import Users from './components/users/users.jsx';
-import Withdraws from './components/withraws/withraws.jsx';
+import Withraws from './components/withraws/withraws.jsx';
 import Home from './components/Home/home.jsx';
 import NoPage from './components/nopage/nopage.jsx';
 import Login from './components/login/loginpage.jsx';
@@ -25,7 +25,7 @@ function App() {
       }>
         <Route index element={<Dashbord />} />
         <Route path="users" element={<Users />} />
-        <Route path="withdraws" element={<Withdraws />} />
+        <Route path="withraws" element={<Withraws />} />
         <Route path="notifications" element={<Notification />} />
         <Route path="*" element={<NoPage />} />
       </Route>

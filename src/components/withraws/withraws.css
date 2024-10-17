@@ -1,0 +1,48 @@
+.withraws-dashboard {
+    padding: 20px;
+  }
+  
+  .withraws-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .blocks-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .withraws-stats, .additional-insights {
+    margin-top: 20px;
+  }
+  
+  .withraws-stats h2, .additional-insights h2 {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .stats-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+  
+  .new-blocks-container {
+    margin-top: 30px;
+  }
+  
+  .new-blocks-container h2 {
+    font-size: 22px;
+    color: #444;
+  }
+  
+  .new-blocks-container .stats-card {
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,31 @@
+.no-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa; /* Oq rang fon */
+    color: #343a40; /* Matn rangi */
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+  
+  .home-link {
+    color: #007bff; /* Havola rangi */
+    text-decoration: none; /* Chizish o'chiriladi */
+    font-weight: bold;
+  }
+  
+  .home-link:hover {
+    text-decoration: underline; /* Hoverda chizish qo'shiladi */
+  }
+  

@@ -1,14 +1,12 @@
-/* Umumiy jadvalni o'rash */
 .users-wrapper {
     padding: 20px;
     background-color: #eef1f4;
     border-radius: 15px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     max-width: 100%;
-    overflow-x: auto; /* Jadval juda keng bo'lsa, scroll qo'shadi */
+    overflow-x: auto;
 }
 
-/* Jadval uchun konteyner */
 .users-container {
     margin-top: 20px;
     background: #ffffff;
@@ -16,10 +14,9 @@
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* O'sib ketishining oldini oladi */
+    overflow: hidden;
 }
 
-/* Jadval uchun boshqaruv tugmalari */
 .table-controls {
     display: flex;
     justify-content: space-between;
@@ -32,7 +29,6 @@
     align-items: center;
 }
 
-/* Jadvaldagi asosiy tugmalar */
 .status-btn {
     margin-left: 5px;
     padding: 8px 16px;
@@ -59,7 +55,6 @@
     transition: border-color 0.3s ease;
 }
 
-/* Jadval dizayni */
 .user-table {
     width: 100%;
     border-collapse: collapse;
@@ -77,15 +72,13 @@
     border-bottom: 1px solid #ddd;
 }
 
-/* Profil rasmning o'lchami */
 .user-table td img {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Dumaloq profil rasm */
+    border-radius: 50%;
     object-fit: cover;
 }
 
-/* Jadvaldagi ustunlar sarlavhasi */
 .user-table th {
     background-color: #2C3E50;
     color: #ffffff;
@@ -94,25 +87,23 @@
     letter-spacing: 0.03em;
 }
 
-/* Jadvalning qatorlari */
 .user-table tbody tr {
     background-color: #ffffff;
     transition: background-color 0.2s ease;
 }
 
 .user-table tbody tr:hover {
-    background-color: #f1f1f1; /* Hoverda qator foni */
+    background-color: #f1f1f1;
 }
 
 .user-table tbody tr:nth-child(even) {
-    background-color: #f8f8f8; /* Har ikkinchi qatorda engil rang */
+    background-color: #f8f8f8;
 }
 
 .user-table tbody tr td {
     border-bottom: 1px solid #ddd;
 }
 
-/* Tugmalar dizayni */
 .info-btn,
 .confirm-btn {
     padding: 8px 12px;
@@ -129,7 +120,6 @@
     background-color: #1a252f;
 }
 
-/* Pagination dizayni */
 .pagination {
     display: flex;
     justify-content: center;
@@ -157,14 +147,13 @@
     color: #ffffff;
 }
 
-/* Toggle tugma */
 .status-toggle-btn {
     position: relative;
     width: 50px;
     height: 25px;
     border: none;
     border-radius: 25px;
-    background-color: #2C3E50; /* Asosiy sayt ranglariga mos quyuq kulrang */
+    background-color: #2C3E50;
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;
@@ -175,33 +164,30 @@
     width: 50%;
     height: 100%;
     border-radius: 25px;
-    background-color: #bfc5c9; /* Tugmaning oddiy holati */
+    background-color: #bfc5c9;
     top: 0;
     left: 0;
     transition: left 0.3s ease;
 }
 
 .status-toggle-btn.online {
-    background-color: #3b5998; /* Quyuq ko'k - online holat */
+    background-color: #3b5998;
 }
 
 .status-toggle-btn.online .toggle-inner {
-    background-color: #ffffff; /* Yoqilganida oq tugma */
+    background-color: #ffffff;
     left: 50%;
 }
 
 .status-toggle-btn.offline {
-    background-color: #6c757d; /* Quyuq kulrang - offline holat */
+    background-color: #6c757d;
 }
 
 .status-toggle-btn.offline .toggle-inner {
-    background-color: #ffffff; /* O'chirilganda oq tugma */
+    background-color: #ffffff;
     left: 0;
 }
 
-
-
-/* Action buttons */
 .action-buttons {
     display: flex;
     justify-content: center;

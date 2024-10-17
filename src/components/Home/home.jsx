@@ -37,10 +37,10 @@ function Home() {
                             {!isCollapsed && <span className="text">Users</span>}
                         </Link>
                     </li>
-                    <li className={location.pathname === '/withdraws' ? 'active' : ''}>
-                        <Link to="/withdraws" className={location.pathname === '/withdraws' ? 'active' : ''}>
+                    <li className={location.pathname === '/withraws' ? 'active' : ''}>
+                        <Link to="/withraws" className={location.pathname === '/withraws' ? 'active' : ''}>
                             <FaMoneyBillWave className="home-icon" />
-                            {!isCollapsed && <span className="text">Withdraws</span>}
+                            {!isCollapsed && <span className="text">Withraws</span>}
                         </Link>
                     </li>
                     <li className={location.pathname === '/notifications' ? 'active' : ''}> {/* Notification bo'limi qo'shildi */}
