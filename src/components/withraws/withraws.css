@@ -1,48 +1,395 @@
-.withraws-dashboard {
+.withraws-container {
+  padding: 20px;
+  background-color: #eef1f4;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow-x: auto;
+}
+.withraws-blocks-container{
+  display: flex;
+  gap: 20px;
+}
+.withraws-block-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.withraws-title {
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.withraws-show-entries {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.withraws-status-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2C3E50;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.withraws-status-btn.disabled {
+  background-color: #e74c3c;
+}
+
+.withraws-search-box {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.withraws-search-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  width: 240px;
+  transition: border-color 0.3s ease;
+}
+
+.withraws-user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+}
+
+.withraws-user-table th,
+.withraws-user-table td {
+  padding: 12px 15px;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.withraws-user-table th {
+  background-color: #2C3E50;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.withraws-user-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.withraws-user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.withraws-user-table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.withraws-user-table img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.withraws-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.withraws-page-btn {
+  margin: 0 8px;
+  padding: 10px 15px;
+  border: 1px solid #2C3E50;
+  background-color: #ffffff;
+  color: #2C3E50;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.withraws-page-btn:hover {
+  background-color: #2C3E50;
+  color: #ffffff;
+}
+
+.withraws-page-btn.active {
+  background-color: #2C3E50;
+  color: #ffffff;
+}
+
+.withraws-status-toggle-btn {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #2C3E50;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.withraws-toggle-inner {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #bfc5c9;
+  top: 0;
+  left: 0;
+  transition: left 0.3s ease;
+}
+
+.withraws-status-toggle-btn.online {
+  background-color: #3b5998;
+}
+
+.withraws-status-toggle-btn.online .withraws-toggle-inner {
+  background-color: #ffffff;
+  left: 50%;
+}
+
+.withraws-status-toggle-btn.offline {
+  background-color: #6c757d;
+}
+
+.withraws-status-toggle-btn.offline .withraws-toggle-inner {
+  background-color: #ffffff;
+  left: 0;
+}
+
+.withraws-action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.withraws-info-btn,
+.withraws-confirm-btn {
+  padding: 10px 20px;
+  border: none;/* Umumiy konteyner */
+  .wrapper {
     padding: 20px;
+    background-color: #eef1f4;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow-x: auto;
   }
   
-  .withraws-title {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
+  /* Jadval uchun konteyner */
+  .container {
+    margin-top: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
   }
   
-  .blocks-container {
+  /* Jadval boshqaruv tugmalari */
+  .controls {
     display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
   }
   
-  .withraws-stats, .additional-insights {
+  /* Tugmalar */
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2C3E50;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn.disabled {
+    background-color: #e74c3c; /* Disabled holati */
+  }
+  
+  .btn:hover {
+    background-color: #1a252f;
+  }
+  
+  /* Qidiruv oynasi */
+  .search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 240px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Jadval dizayni */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #2C3E50;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Qatorlar */
+  .table tbody tr {
+    transition: background-color 0.2s ease;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1; /* Hoverda qator foni */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f8f8f8; /* Har ikkinchi qatorda engil rang */
+  }
+  
+  .table tbody tr img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Dumaloq profil rasm */
+    object-fit: cover;
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .page-btn {
+    margin: 0 8px;
+    padding: 10px 15px;
+    border: 1px solid #2C3E50;
+    background-color: #ffffff;
+    color: #2C3E50;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .page-btn:hover {
+    background-color: #2C3E50;
+    color: #ffffff;
+  }
+  
+  .page-btn.active {
+    background-color: #2C3E50;
+    color: #ffffff;
+  }
+  
+  /* Toggle tugma */
+  .toggle-btn {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2C3E50;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-inner {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #bfc5c9;
+    top: 0;
+    left: 0;
+    transition: left 0.3s ease;
+  }
+  
+  .toggle-btn.online {
+    background-color: #3b5998; /* Quyuq ko'k - online holat */
+  }
+  
+  .toggle-btn.online .toggle-inner {
+    left: 50%;
+  }
+  
+  .toggle-btn.offline {
+    background-color: #6c757d; /* Quyuq kulrang - offline holat */
+  }
+  
+  .toggle-btn.offline .toggle-inner {
+    left: 0;
+  }
+  
+  /* Action buttons */
+  .action-buttons {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
   }
   
-  .withraws-stats h2, .additional-insights h2 {
-    font-size: 24px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .stats-card {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 18px;
-  }
-  
-  .new-blocks-container {
-    margin-top: 30px;
-  }
-  
-  .new-blocks-container h2 {
-    font-size: 22px;
-    color: #444;
-  }
-  
-  .new-blocks-container .stats-card {
-    margin-top: 10px;
-  }
-  
+  border-radius: 8px;
+  background-color: #2C3E50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.withraws-info-btn:hover,
+.withraws-confirm-btn:hover {
+  background-color: #1a252f;
+}
+.withraws-users-container{
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* O'sib ketishining oldini oladi */
+}
+.withraws-table-controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

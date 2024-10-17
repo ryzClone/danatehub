@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
-import { FaTachometerAlt, FaUsers, FaMoneyBillWave, FaPowerOff, FaBell } from 'react-icons/fa'; // FaBell qo'shildi
+import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
+import { FaTachometerAlt, FaUsers, FaMoneyBillWave, FaPowerOff, FaBell } from 'react-icons/fa';
 import './home.css';
 
 function Home() {
     const location = useLocation();
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const navigate = useNavigate(); // React Router navigate hook
 
     const toggleSidebar = () => {
         setIsCollapsed(prev => !prev);
     };
 
     const handleLogout = () => {
-        console.log('Logout clicked');
+        // Clear local storage or authentication data
+        localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('loginTime');
+
+        // Redirect to login page
+        navigate('/login');
     };
 
     return (
@@ -43,9 +49,9 @@ function Home() {
                             {!isCollapsed && <span className="text">Withraws</span>}
                         </Link>
                     </li>
-                    <li className={location.pathname === '/notifications' ? 'active' : ''}> {/* Notification bo'limi qo'shildi */}
+                    <li className={location.pathname === '/notifications' ? 'active' : ''}>
                         <Link to="/notifications" className={location.pathname === '/notifications' ? 'active' : ''}>
-                            <FaBell className="home-icon" /> {/* FaBell ikon qo'shildi */}
+                            <FaBell className="home-icon" />
                             {!isCollapsed && <span className="text">Notifications</span>}
                         </Link>
                     </li>

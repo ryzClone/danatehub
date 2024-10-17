@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './notification.css';
-import BlockComponent from '../Viewblock/BlockComponent';
+
 
 function Notification() {
-    const [userCount, setUserCount] = useState(200);
+
     const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [notifications, setNotifications] = useState([]);
@@ -21,12 +21,6 @@ function Notification() {
     return (
         <div className="notification-container">
             <h1 className="notification-title">Notification</h1>
-            <div className="notification-block-container">
-                <BlockComponent title="Total Users" count={userCount} iconType="users" />
-                <BlockComponent title="Sessions" count="1,500" iconType="sessions" />
-                <BlockComponent title="Bounce Rate" count="40%" iconType="bounceRate" />
-                <BlockComponent title="Avg Session Duration" count="5m 12s" iconType="avgSessionDuration" />
-            </div>
 
             <div className="notification-block">
                 <div className="create-notification-block">
