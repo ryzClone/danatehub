@@ -39,6 +39,12 @@ const Login = () => {
     navigate('/');
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin();
+    }
+  };
+
   return (
     <div className="login-container">
       <div className="content-wrapper">
@@ -51,6 +57,7 @@ const Login = () => {
               placeholder="Username" 
               value={username} 
               onChange={(e) => setUsername(e.target.value)} 
+              onKeyDown={handleKeyDown} 
             />
           </div>
           <div className="input-group">
@@ -60,6 +67,7 @@ const Login = () => {
               placeholder="Password" 
               value={password} 
               onChange={(e) => setPassword(e.target.value)} 
+              onKeyDown={handleKeyDown} 
             />
           </div>
           <button className="login-btn" onClick={handleLogin}>Login</button>

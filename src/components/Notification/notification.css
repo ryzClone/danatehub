@@ -16,6 +16,14 @@
     text-align: left;
     width: 100%;
 }
+.notification-subtitle{
+    font-size: 28px;
+    color: #444;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+}
 
 .notification-block {
     display: flex;

@@ -63,6 +63,10 @@ body {
 .sidebar.collapsed ul li {
     justify-content: center;
 }
+.sidebar.collapsed ul li a {
+    justify-content: center;
+    padding-left: 0;
+}
 
 .sidebar ul li a {
     text-decoration: none;
@@ -174,5 +178,130 @@ body {
 @media (max-width: 768px) {
     .sidebar ul li {
         padding: 5px;
+    }
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 1440px) {
+    .sidebar {
+        width: 15%; /* Increase sidebar width for better visibility */
+    }
+
+    .sidebar.collapsed {
+        width: 80px; /* Adjust collapsed sidebar width */
+    }
+
+    .logo-container {
+        height: 70px; /* Increase logo container height */
+    }
+
+    .logo-text {
+        font-size: 20px; /* Slightly larger logo text */
+    }
+
+    .sidebar ul li {
+        padding: 15px 0; /* Increase padding for list items */
+    }
+
+    .sidebar ul li a {
+        font-size: 16px; /* Increase font size for links */
+        padding-left: 15px; /* Add more padding for better spacing */
+    }
+
+    .sidebar ul li a .home-icon {
+        font-size: 28px; /* Slightly larger icons */
+    }
+
+    .header {
+        min-height: 70px; /* Increase header height */
+        padding: 0 30px; /* Add more padding */
+    }
+
+    .user-icon,
+    .logout-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 28px; /* Increase icon size */
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .sidebar.collapsed {
+        width: 100px; /* Adjust collapsed sidebar width */
+    }
+
+    .logo-container {
+        height: 85px; /* Larger logo container */
+    }
+
+    .logo-text {
+        font-size: 24px; /* Larger logo text */
+    }
+
+    .sidebar ul li {
+        padding: 20px 0; /* More padding for list items */
+    }
+
+    .sidebar ul li a {
+        font-size: 18px; /* Larger font size for links */
+        padding-left: 20px; /* Add more padding for spacing */
+    }
+
+    .sidebar ul li a .home-icon {
+        font-size: 32px; /* Larger icons */
+    }
+
+    .header {
+        min-height: 80px; /* Increase header height further */
+        padding: 0 40px; /* More padding for content */
+    }
+
+    .user-icon,
+    .logout-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 32px; /* Larger icons */
+    }
+
+    .hamburger .line {
+        width: 30px; /* Adjust hamburger icon size */
+    }
+
+    .outlet {
+        font-size: 18px; /* Increase font size for content */
+    }
+}
+
+/* Example for screens larger than 2560px (4K) */
+@media (min-width: 2560px) {
+
+    .sidebar.collapsed {
+        width: 120px;
+    }
+
+    .logo-text {
+        font-size: 28px;
+    }
+
+    .sidebar ul li {
+        padding: 25px 0;
+    }
+
+    .sidebar ul li a {
+        font-size: 20px;
+        padding-left: 25px;
+    }
+
+    .header {
+        min-height: 90px;
+        padding: 0 50px;
+    }
+
+    .user-icon,
+    .logout-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
     }
 }

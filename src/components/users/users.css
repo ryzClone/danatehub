@@ -44,6 +44,10 @@
     transition: background-color 0.3s ease;
 }
 
+.status-btn.disabled {
+    background-color: #e74c3c;
+  }
+
 .search-box {
     display: flex;
     align-items: center;

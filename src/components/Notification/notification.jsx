@@ -24,7 +24,7 @@ function Notification() {
 
             <div className="notification-block">
                 <div className="create-notification-block">
-                    <h2 className="notification-title">Create Notification</h2>
+                    <h2 className="notification-subtitle">Create Notification</h2>
                     <form className="notification-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="title">Title:</label>
